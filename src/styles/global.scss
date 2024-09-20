@@ -1,25 +1,26 @@
 // 全局class
 @font-face {
-  font-weight: normal;
+  font-display: block;
   font-family: 'Bai Jamjuree';
   font-style: normal;
-  src: url('/fonts/BaiJamjuree-Medium.ttf') format('truetype');
-  font-display: block;
-}
-@font-face {
   font-weight: normal;
+  src: url('/fonts/BaiJamjuree-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: block;
   font-family: 'Bai Jamjuree SemiBold';
   font-style: normal;
+  font-weight: normal;
   src: url('/fonts/BaiJamjuree-SemiBold.ttf') format('truetype');
-  font-display: block;
 }
 
 // 单行文本溢出
 
 .ellipsis {
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // 清浮动
@@ -29,9 +30,9 @@
 
   &::before,
   &::after {
-    display: table;
     clear: both;
     content: ' ';
+    display: table;
   }
 
   &::after {
