@@ -1,5 +1,4 @@
 import { extendTheme, theme as baseTheme, ThemeConfig } from '@chakra-ui/react'
-import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 import styles from './styles'
 import borders from './foundations/borders'
@@ -7,32 +6,49 @@ import components from './components'
 
 const config: ThemeConfig = {}
 
-const breakpoints = createBreakpoints({
+const breakpoints = {
   sm: '640px',
   md: '768px',
   lg: '1024px',
   xl: '1366px',
-})
+}
 
 const colors = {
   ...baseTheme.colors,
   white: {
     '100': '#FFFFFF',
-    '200': '#F9FAFE',
   },
-  black: '#000000',
+  black: {
+    '100': '#000000',
+    '200': '#090A09',
+    '300': '#2E2D2D',
+    '400': '#1E1E1E',
+  },
   blue: {
     '100': '#3A68E7',
-    '200': '#213C86',
-    '300': '#2A4DAD',
-    '400': '#97B3FF',
-    '500': '#F9FAFE',
-    '600': '#D7E1FF',
   },
   green: {
-    '200': '#9DDB59',
+    '100': '#A3F030',
   },
-  yellow: { '200': '#EDAB06' },
+  yellow: {
+    '100': '#EDAB06',
+  },
+  gray: {
+    '100': '#EAEAEA',
+  },
+  red: {
+    '100': '#EB001B',
+  },
+  orange: {
+    '100': '#CE5B51',
+  },
+  border: {
+    '100': 'rgba(255, 255, 255, 0.05)',
+    '200': 'rgba(255, 255, 255, 0.1)',
+  },
+  bg: {
+    '100': 'rgba(9,10,9,0.8)',
+  },
 }
 
 const textStyles = {

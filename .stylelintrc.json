@@ -1,9 +1,28 @@
 {
-  "plugins": ["stylelint-scss", "stylelint-order"],
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-rational-order",
-    "stylelint-config-prettier"
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
   ],
-  "rules": {}
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "no-duplicate-selectors": true,
+    "color-hex-length": "short",
+    "function-url-quotes": "always",
+    "comment-empty-line-before": "always",
+    "rule-empty-line-before": "always-multi-line",
+    "selector-pseudo-element-colon-notation": "double",
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "order/properties-alphabetical-order": true,
+    "no-descending-specificity": null,
+    "no-empty-source": null,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "*zoom"
+        ]
+      }
+    ]
+  }
 }

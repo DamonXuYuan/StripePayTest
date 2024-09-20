@@ -1,20 +1,38 @@
-import React from 'react'
-import { Box } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import { Center, Image, SimpleGrid } from '@chakra-ui/react'
 import { getI18nSSRProps, GetI18nServerSideProps } from '@/utils/i18n'
+import logo from '@/assets/imgs/logo.png'
+import BaseInput from '@/components/BaseInput'
+import BaseButton from '@/components/BaseButton'
 
 function App() {
+  const [userName, setUserName] = useState('')
+  const [password, setPassword] = useState('')
+
+  const login = () => {
+    console.log(userName, password)
+  }
+
   return (
-    <Box
-      maxW={{
-        lg: '1366px',
-      }}
-      minW={{
-        lg: '1024px',
-      }}
-      margin=" 0 auto"
-    >
-      fornt-module
-    </Box>
+    <Center w="100vw" h="100vh">
+      <SimpleGrid w="30%" spacing="30px">
+        <Image src={logo} w="212px" mx="auto" />
+        <BaseInput
+          w="full"
+          placeholder="用户名"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <BaseInput
+          w="full"
+          placeholder="密码"
+          password
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <BaseButton onClick={login}>登陆</BaseButton>
+      </SimpleGrid>
+    </Center>
   )
 }
 

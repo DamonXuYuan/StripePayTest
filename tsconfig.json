@@ -8,7 +8,7 @@
     "useDefineForClassFields": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": ["dom", "es2017", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -23,8 +23,10 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "incremental": false // 不生成tsconfig.tsbuildinfo文件
+    "incremental": false,
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "typings.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "typings.d.ts", "src/**/*"]
 }

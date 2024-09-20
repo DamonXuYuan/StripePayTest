@@ -10,7 +10,6 @@ import { getI18nSSRProps, GetI18nStaticProps } from '@/utils/i18n'
 import theme from '@/theme'
 import '@/styles/global.scss'
 import 'react-toastify/dist/ReactToastify.css'
-import Header from '@/components/Header'
 
 const { publicRuntimeConfig } = getConfig()
 
@@ -22,7 +21,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>{`${pageProps?.title || publicRuntimeConfig.title}`}</title>
+        <title>Luck7后台管理系统</title>
         <meta charSet="utf-8" />
         <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes" />
         <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -44,7 +43,6 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <ChakraProvider resetCSS theme={theme}>
-        <Header />
         <Component {...(pageProps ?? {})} />
         <ToastContainer />
       </ChakraProvider>
