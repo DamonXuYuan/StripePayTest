@@ -10,19 +10,19 @@ function Index({ children, ...props }: IProps) {
     <Button
       w="full"
       h="54px"
-      borderRadius="999px"
-      bgColor="green.100"
+      borderRadius="20px"
+      bgColor="blue.100"
       p="0"
       m="0"
       textAlign="center"
-      color="black.200"
+      color="white.100"
       fontSize="12px"
       fontWeight="400"
       // textDecor="underline"
-      _hover={{ bgColor: 'green.200', color: 'black.200' }}
-      _active={{ bgColor: 'green.200', color: 'black.200' }}
-      _focus={{ bgColor: 'green.200', color: 'black.200' }}
-      _focusVisible={{ bgColor: 'green.200', color: 'black.200' }}
+      _hover={{ bgColor: 'blue.100', color: 'black.100' }}
+      _active={{ bgColor: 'blue.100', color: 'black.100' }}
+      _focus={{ bgColor: 'blue.100', color: 'black.100' }}
+      _focusVisible={{ bgColor: 'blue.100', color: 'black.100' }}
       {...props}
     >
       {children}

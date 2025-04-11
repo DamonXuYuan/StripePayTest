@@ -21,7 +21,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Luck7后台管理系统</title>
+        <title>StripePay</title>
         <meta charSet="utf-8" />
         <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes" />
         <meta content="yes" name="apple-mobile-web-app-capable" />

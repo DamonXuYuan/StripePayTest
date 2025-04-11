@@ -1,38 +1,25 @@
 import React, { useState } from 'react'
-import { Center, Image, SimpleGrid } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { getI18nSSRProps, GetI18nServerSideProps } from '@/utils/i18n'
-import logo from '@/assets/imgs/logo.png'
-import BaseInput from '@/components/BaseInput'
+import PayModal, { PayInfo } from '@/components/PayModal'
 import BaseButton from '@/components/BaseButton'
 
 function App() {
-  const [userName, setUserName] = useState('')
-  const [password, setPassword] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
 
-  const login = () => {
-    console.log(userName, password)
+  const payInfo: PayInfo = {
+    nftNum: 26,
+    nftPrice: '12.12345678',
+    discountCode: '1232456798',
   }
 
   return (
-    <Center w="100vw" h="100vh">
-      <SimpleGrid w="30%" spacing="30px">
-        <Image src={logo} w="212px" mx="auto" />
-        <BaseInput
-          w="full"
-          placeholder="用户名"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <BaseInput
-          w="full"
-          placeholder="密码"
-          password
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <BaseButton onClick={login}>登陆</BaseButton>
-      </SimpleGrid>
-    </Center>
+    <Flex w="100vw" h="100vh" bgColor="black.200">
+      <BaseButton w="200px" m="20px" onClick={() => setIsOpen(!isOpen)}>
+        点击我
+      </BaseButton>
+      <PayModal show={isOpen} payInfo={payInfo} onclose={() => setIsOpen(false)} />
+    </Flex>
   )
 }
 
